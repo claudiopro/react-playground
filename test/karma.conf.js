@@ -10,6 +10,7 @@ module.exports = function(config) {
 			'karma-phantomjs-launcher'
 			, 'karma-chrome-launcher'
 			, 'karma-browserify'
+			, 'karma-junit-reporter'
 			, 'karma-mocha'
 			, 'karma-sinon'
 			, 'karma-chai'
@@ -43,7 +44,7 @@ module.exports = function(config) {
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
 			'src/**/*.js' : ['browserify']
-			//, 'src/**/*.jsx' : ['browserify']
+			//, '../src/**/*.jsx' : ['browserify']
 		},
 
 		browserify: {
@@ -58,11 +59,18 @@ module.exports = function(config) {
 				//, '.jsx'
 			]
 		},
+		
+		junitReporter: {
+			outputDir: '../test_results'
+		},
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters: ['progress'],
+		reporters: [
+			'progress'
+			, 'junit'
+		],
 
 
 		// web server port
