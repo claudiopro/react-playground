@@ -4,7 +4,12 @@
   "description": "Playground for React",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "pretest": "npm install",
+    "pretest-single-run": "npm install",
+    "pretest-ci": "npm install",
+    "test": "karma start test/karma.conf.js",
+    "test-single-run": "karma start test/karma.conf.js --single-run",
+    "test-ci": "karma start test/karma.conf.js --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
@@ -22,23 +27,29 @@
     "url": "https://github.com/claudiopro/react-playground/issues"
   },
   "devDependencies": {
-    "chai": "~3.2.0",
-    "karma-chai": "~0.1.0",
-    "sinon": "~1.16.1",
-    "karma-sinon": "~1.0.4",
+    "brfs": "^1.0.2",
     "browserify": "~11.0.1",
-    "mocha": "~2.3.0",
-    "karma-mocha": "~0.2.0",
-    "karma": "~0.13.9",
+    "chai": "~3.2.0",
     "gulp": "~3.9.0",
-    "vinyl-source-stream": "~1.1.0",
-    "vinyl-buffer": "~1.0.0",
-    "gulp-uglify": "~1.4.0",
-    "reactify": "~1.1.1",
-    "gulp-util": "~3.0.6",
-    "watchify": "~3.4.0",
+    "gulp-connect": "~2.2.0",
     "gulp-notify": "~2.2.0",
-    "gulp-connect": "~2.2.0"
+    "gulp-uglify": "~1.4.0",
+    "gulp-util": "~3.0.6",
+    "karma": "^0.13.9",
+    "karma-browserify": "^4.3.0",
+    "karma-chai": "~0.1.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "^0.1.0",
+    "karma-mocha": "~0.2.0",
+    "karma-phantomjs-launcher": "~0.2.1",
+    "karma-sinon": "~1.0.4",
+    "mocha": "~2.3.0",
+    "phantomjs": "^1.9.18",
+    "reactify": "~1.1.1",
+    "sinon": "~1.16.1",
+    "vinyl-buffer": "~1.0.0",
+    "vinyl-source-stream": "~1.1.0",
+    "watchify": "~3.4.0"
   },
   "dependencies": {
     "react": "~0.13.3"
