@@ -30,10 +30,12 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			'../src/js/**/*.js'
-			//, '../src/js/**/*.jsx'
+		    '../node_modules/phantomjs-polyfill/bind-polyfill.js'
+			// , '../src/js/**/*.js'
+			// , '../src/js/**/*.jsx'
+			// , '../src/js/**/**/*.jsx'
 			, './unit/**/*.spec.js'
-			//, './unit/**/*.spec.jsx'
+			, './unit/**/*.spec.jsx'
 		],
 
 
@@ -45,8 +47,9 @@ module.exports = function(config) {
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
 			'../src/**/*.js' : ['browserify', 'coverage']
-			,'./unit/**/*.js' : ['browserify']
-			//, '../src/**/*.jsx' : ['browserify']
+			, '../src/**/*.jsx' : ['browserify']
+			, './unit/**/*.js' : ['browserify']
+			, './unit/**/*.jsx' : ['browserify']
 		},
 
 		browserify: {
@@ -58,7 +61,7 @@ module.exports = function(config) {
 			// don't forget to register the extensions
 			extensions: [
 				'.js'
-				//, '.jsx'
+				, '.jsx'
 			]
 		},
 		
