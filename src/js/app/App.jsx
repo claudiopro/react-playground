@@ -1,12 +1,11 @@
-module.exports = (function() {
-	
-	var React = require('react');
+var React = require('react');
 
-	return React.createClass({
-		render: function() {
-			return (
-				<h1>Hello, React!</h1>
-			);
-		}
-	});
-}());
+var App = React.createClass({
+	render: function() {
+		return (
+			<h1>Hello, React!</h1>
+		);
+	}
+});
+
+module.exports = App;
