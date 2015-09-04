@@ -11,6 +11,7 @@ module.exports = function(config) {
 			, 'karma-chrome-launcher'
 			, 'karma-browserify'
 			, 'karma-junit-reporter'
+			, 'karma-coverage'
 			, 'karma-mocha'
 			, 'karma-sinon'
 			, 'karma-chai'
@@ -43,7 +44,7 @@ module.exports = function(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'src/**/*.js' : ['browserify']
+			'src/**/*.js' : ['coverage', 'browserify']
 			//, '../src/**/*.jsx' : ['browserify']
 		},
 
@@ -64,12 +65,18 @@ module.exports = function(config) {
 			outputDir: '../test_results'
 		},
 
+		coverageReporter: {
+			type : 'cobertura'
+			, dir : '../coverage'
+		},
+		
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
 		reporters: [
 			'progress'
 			, 'junit'
+			, 'coverage'
 		],
 
 
