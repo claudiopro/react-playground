@@ -1,5 +1,3 @@
-var istanbul = require('browserify-istanbul');
-
 // Karma configuration
 // Generated on Fri Sep 04 2015 11:20:57 GMT+0100 (IST)
 module.exports = function(config) {
@@ -58,9 +56,7 @@ module.exports = function(config) {
 			, transform: [
 				'reactify'
 				, 'brfs'
-				, istanbul({
-					ignore: ['**/node_modules/**', '**/test/**']
-				})
+				, 'istanbulify'
 			]
 			
 			// don't forget to register the extensions
@@ -68,6 +64,8 @@ module.exports = function(config) {
 				'.js'
 				, '.jsx'
 			]
+			
+			, bundleDelay: 1000
 		},
 		
 		junitReporter: {
@@ -75,7 +73,7 @@ module.exports = function(config) {
 		},
 
 		coverageReporter: {
-			type : 'cobertura'
+			type : 'html'
 			, dir : '../coverage'
 		},
 		
