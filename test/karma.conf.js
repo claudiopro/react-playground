@@ -1,3 +1,5 @@
+var istanbul = require('browserify-istanbul');
+
 // Karma configuration
 // Generated on Fri Sep 04 2015 11:20:57 GMT+0100 (IST)
 module.exports = function(config) {
@@ -31,9 +33,8 @@ module.exports = function(config) {
 		// list of files / patterns to load in the browser
 		files: [
 		    '../node_modules/phantomjs-polyfill/bind-polyfill.js'
-			// , '../src/js/**/*.js'
-			// , '../src/js/**/*.jsx'
-			// , '../src/js/**/**/*.jsx'
+			, '../src/js/**/*.js'
+			, '../src/js/**/*.jsx'
 			, './unit/**/*.spec.js'
 			, './unit/**/*.spec.jsx'
 		],
@@ -46,20 +47,24 @@ module.exports = function(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'../src/**/*.js' : ['browserify', 'coverage']
+			'../src/**/*.js' : ['browserify']
 			, '../src/**/*.jsx' : ['browserify']
 			, './unit/**/*.js' : ['browserify']
 			, './unit/**/*.jsx' : ['browserify']
 		},
 
 		browserify: {
-			transform: [
+			debug: true
+			, transform: [
 				'reactify'
 				, 'brfs'
-			],
+				, istanbul({
+					ignore: ['**/node_modules/**', '**/test/**']
+				})
+			]
 			
 			// don't forget to register the extensions
-			extensions: [
+			, extensions: [
 				'.js'
 				, '.jsx'
 			]
