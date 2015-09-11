@@ -22,7 +22,7 @@
  *  THE SOFTWARE.
  */
 
-var foo = require('../../src/js/test');
+var foo = require('../test');
 
 describe('function foo', function() {
 	it('returns 1', function() {
