@@ -31,8 +31,8 @@ module.exports = {
 		react: "./src/js/main.jsx"
 	},
 	output: {
-		path: path.join(__dirname, "dist"),
-		publicPath: "dest/",
+		path: path.join(__dirname, "dest", "js"),
+		publicPath: "dest/js/",
 		filename: "main.js",
 		chunkFilename: "[chunkhash].js"
 	},
