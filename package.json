@@ -7,9 +7,9 @@
     "pretest": "npm install",
     "pretest-single-run": "npm install",
     "pretest-ci": "npm install",
-    "test": "karma start test/karma.conf.js",
-    "test-single-run": "karma start test/karma.conf.js --single-run",
-    "test-ci": "karma start test/karma.conf.js --single-run --browsers PhantomJS"
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js --single-run",
+    "test-ci": "karma start karma.conf.js --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
