@@ -22,11 +22,11 @@
  *  THE SOFTWARE.
  */
 
-var App = require('../../src/js/main.jsx');
+var App = require('../App.jsx');
 var expect = require('chai').expect;
 
-describe('the main module', function() {
-	it('ensures an element with id #main exists', function() {
-		expect(document.getElementById('main')).to.not.equal(null);
+describe('the App component', function() {
+	it('is not null', function() {
+		expect(App).to.not.equal(undefined);
 	});
 });
