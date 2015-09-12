@@ -26,7 +26,7 @@ module.exports = function (config) {
       'tests.webpack.js': [ 'webpack', 'sourcemap' ]
     },
 
-    reporters: [ 'dots', 'coverage' ],
+    reporters: [ 'dots', 'junit', 'coverage' ],
 
     webpack: {
       devtool: 'inline-source-map',
@@ -49,6 +49,10 @@ module.exports = function (config) {
 
     webpackServer: {
       noInfo: true
+    },
+
+    junitReporter: {
+			outputDir: 'test_results/'
     },
 
     coverageReporter: {
